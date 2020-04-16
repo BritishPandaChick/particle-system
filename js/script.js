@@ -27,7 +27,7 @@ function create_particle(){
     var r = Math.random()*255>>0;
     var g = Math.random()*255>>0;
     var b = Math.random()*255>>0;
-    this.color = "rgba(" + r + ", " + g + ", " + b + ", 0.5";
+    this.color = "rgba(" + r + ", " + g + ", " + b + ", 0.5)";
 
     //Random size 
     this.radius = Math.random()*20 + 20;
@@ -63,7 +63,7 @@ function draw(){
         gradient.addColorStop(1, "black");
 
         ctx.fillStyle = gradient;
-        ctx.arc(p.x, p.y, 40, Math.PI*2, false);
+        ctx.arc(p.x, p.y, p.radius, Math.PI*2, false);
         ctx.fill();
 
         //Lets use the velocity now
@@ -71,12 +71,12 @@ function draw(){
         p.y += p.vy;
 
         //To prevent the balls from moving out of the canvas 
-        if(p.x < 20) {
-            p.x = W + 20;
+        if(p.x < -50) {
+            p.x = W + 50;
         }
 
-        if(p.y < -20) {
-            p.y = H + 20;
+        if(p.y < -50) {
+            p.y = H + 50;
         }
 
         if(p.x > W+50) {
@@ -84,7 +84,7 @@ function draw(){
         }
 
         if(p.y > H + 50) {
-            p.x = -50;
+            p.y = -50;
         }
     }  
 }
