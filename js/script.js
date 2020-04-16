@@ -1,3 +1,20 @@
+//Lets create a simple particle system in HTML5 canvas and JS
+
+//Initializing the canvas
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+//Canvas dimensions
+var W = 500; var H = 500;
+
+//Lets create an array of particles
+var particles = [];
+for(var i = 0; i < 50; i++)
+{
+	//This will add 50 particles to the array with random positions
+	particles.push(new create_particle());
+}
+
 //Lets create a function which will help us to create multiple particles
 function create_particle()
 {
@@ -67,3 +84,4 @@ function draw()
 }
 
 setInterval(draw, 33);
+//I hope that you enjoyed the tutorial :)
